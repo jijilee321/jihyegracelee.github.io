@@ -140,3 +140,10 @@ h3{
       width: 100%;
   }
 }
+
+@media screen and (max-width: 600px){
+		.container1{
+      display: block;
+      width: 100%;
+  }
+}
