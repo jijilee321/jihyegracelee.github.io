@@ -78,7 +78,7 @@ section{
   padding: 1%;
 }
 
-@media only screen and (min-device-width: 3600px) and (max-device-width: 812px){
+@media only screen and (max-width 812px){
 		section{
       display: block;
       width: 100%;
