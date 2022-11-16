@@ -72,6 +72,17 @@ nav a.active{
 
 section{
   margin-top: 2%;
+  display: inline-block;
+  width: 47%;
+  vertical-align: text-top;
+  padding: 1%;
+}
+
+@media screen and (max-width: 500px) {
+		section{
+      display: block;
+      width: 100%;
+  }
 }
 
 h2{
