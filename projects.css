@@ -135,7 +135,7 @@ h3{
 }
 
 @media screen and (max-width: 600px){
-		section, .container1{
+		.container1{
       display: block;
       width: 100%;
   }
