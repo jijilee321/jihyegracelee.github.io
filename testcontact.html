@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jihye Grace Lee - Contact</title>
+	<link rel="stylesheet" href="../css/testcontact.css">
+</head>
+<body>
+	<header>
+		<h1>Contact</h1>
+		<nav>
+        <a href="testhomepage.html">Home</a>
+        <a href="testaboutme.html">About</a>
+  			<a href="testprojects.html">STEM Projects</a>
+				<a href="testpuzzle.html">Puzzles</a>
+				<a href="testcontact.html" class = "active">Contact</a>
+		</nav>
+  </header>
+
+	<div class ="contact">
+		<form action="" name="contact-me">
+			<h2>Get In Touch</h2>
+				<input type="text" name="name" id="name" placeholder="Your Name" required>
+				<input type="email" name="email" id="email" placeholder="Email address" required>
+				<textarea name="message" id="message" rows="4" placeholder="Share your awesome thoughts!"></textarea>
+				<button type="submit">Send</button>
+		</form>
+	</div>
+
+
+	<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyr8vEnI53rirqtYrbHWizl6yaH_bCejBj4K749mK4hFGkUTNxqG3jiSQ7xrye8k0sq/exec'
+  const form = document.forms['contact-me']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+				form.reset()
+				alert('Thank you!')
+			})
+      .catch(error => console.error('Error!', error.message))
+  })
+	</script>
+
+</body>
+</html>
