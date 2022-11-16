@@ -78,13 +78,6 @@ section{
   padding: 1%;
 }
 
-@media only screen and (max-width 812px){
-		section{
-      display: block;
-      width: 100%;
-  }
-}
-
 h2{
   color: #000000;
   background: #DB7F67;
@@ -136,4 +129,11 @@ li a[href^="http"]:hover{
   background: #ffffff;
   color: #669999;
   text-decoration:none;
+}
+
+@media only screen and (max-width 812px){
+		section{
+      display: block;
+      width: 100%;
+  }
 }
