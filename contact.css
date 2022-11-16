@@ -80,7 +80,7 @@ h2{
 
 .contact{
   width: 100%;
-  min-height: 450px;
+  max-height: 450px;
   height: 70vh;
   display: flex;
   align-items: cetner;
