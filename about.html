@@ -27,11 +27,16 @@
           	<li>"How much would it be different to live in the other side of the world?"</li>
           	<li>4 years of experience working as an educator in 5 - 8 grade classroom settings </li>
 						<li>Cat mom</li>
-						<div class = "catimg">
-							<img class = "baby" src = "baby.jpg" alt="Baby cat image"/>
-						</div>
-						<div class = "catimg2">
-							<img class = "kyree" src = "kyree.jpg" alt = "Cat image"/>
+						<div class = "container">
+							<div class = "gallery">
+								<div class="image"><img src="../img/baby.jpg" alt="Baby cat image"></div>
+								<div class="image"><img src="../img/kyree.jpg" alt="Cat image"></div>
+							</div>
+
+							<div class="popup-image">
+								<span>&times;</span>
+								<img src="../img/baby.jpg" alt="">
+							</div>
 						</div>
       		</ul>
     		</p>
@@ -80,5 +85,19 @@
 					</p>
 				</section>
 </main>
+<script>
+
+document.querySelectorAll('.gallery img').forEach(image => {
+	image.onclick = () =>{
+		document.querySelector('.popup-image').style.display = 'block';
+		document.querySelector('.popup-image img').src = image.getAttribute('src');
+	}
+});
+
+document.querySelector('.popup-image span').onclick = () =>{
+	document.querySelector('.popup-image').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
