@@ -86,33 +86,72 @@ h2{
 }
 
 
-.catimg{
-  display: inline-block;
-  margin: 10px;
+.container{
+  display: relative;
 }
 
-.baby{
-  display:inline-block;
+.container .gallery{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 5px;
+}
+
+.container .gallery .image{
+  height: 200px;
+  width: 250px;
+  border: 10px solid #ffffff
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container .gallery .image img{
+  height:100%;
   width: 100%;
-  height: 250px;
-  padding: 0px;
   object-fit: cover;
-  border:3px solid white;
+  transition: .2s linear;
 }
 
-.catimg2{
-  display: inline-block;
-  margin: 10px;
+.container .gallery .image:hover img{
+  transform: scale(1.1);
 }
 
-.kyree{
-  display:inline-block;
+.container .popup-image{
+  position: fixed;
+  top:0; left:0;
+  background: rgba(0,0,0,.9);
+  height: 100%;
   width: 100%;
-  height: 250px;
-  padding: 0px;
-  object-fit: cover;
-  border:3px solid white;
+  z-index: 100;
+  display: none;
 }
+
+.container .popup-image span{
+  position: absolute;
+  top: 0; right: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.container .popup-image img{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #ffffff;
+  border-radius: 5px;
+  height: 600px;
+  object-fit: cover;
+}
+
+@media(max-width: 768px){
+  .container .popup-image img{
+    width: 80%
+}}
 
 h3{
   color: #3F292B;
