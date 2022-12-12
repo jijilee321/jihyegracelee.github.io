@@ -2,40 +2,54 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale = 1.0">
+
 	<title>Jihye Grace Lee - About</title>
-	<link rel="stylesheet" href="about.css">
+	<link rel="stylesheet" href="../css/newaboutme.css">
+
 </head>
+
 <body>
 
-	<header>
-		<h1>About</h1>
-		<nav>
-        <a href="homepage.html">Home</a>
-        <a href="about.html" class = "active">About</a>
-  			<a href="projects.html">STEM Projects</a>
-				<a href="puzzles.html">Puzzles</a>
-				<a href="contact.html">Contact</a>
-		</nav>
-  </header>
+	<nav>
+			<div class="logo">
+				<h4>About</h4>
+			</div>
+
+			<ul class="nav-links">
+        <li><a href="newhomepage.html">Home</a></li>
+        <li><a href="newaboutme.html" class="active">About</a></li>
+  			<li><a href="newproject.html">STEM Projects</a></li>
+				<li><a href="newpuzzle.html">Puzzles</a></li>
+				<li><a href="index.html">Professional Development</a></li>
+				<li><a href="newcontact.html">Contact</a></li>
+			</ul>
+
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+	</nav>
+
 	<main>
 		<section>
     	<h2> About Me </h2>
     		<p>
-					<ul>
+			<ul>
           	<li>Born in South Korea </li>
           	<li>"How much would it be different to live in the other side of the world?"</li>
-          	<li>4 years of experience working as an educator in 5 - 8 grade classroom settings </li>
+          	<li>4 years of experince working as an educator in 5 - 8 grade classroom settings </li>
 						<li>Cat mom</li>
 						<div class = "container">
 							<div class = "gallery">
-								<div class="image"><img src="baby.jpg" alt="Baby cat image"></div>
-								<div class="image"><img src="kyree.jpg" alt="Cat image"></div>
+								<div class="image"><img src="../img/baby.jpg" alt="Baby cat image"></div>
+								<div class="image"><img src="../img/kyree.jpg" alt="Cat image"></div>
 							</div>
 
 							<div class="popup-image">
 								<span>&times;</span>
-								<img src="baby.jpg" alt="">
+								<img src="../img/baby.jpg" alt="">
 							</div>
 						</div>
       		</ul>
@@ -57,8 +71,7 @@
 				<h3>Bachelor of Sciecne in Education</h3>
 					<p>
 						<ul>
-							<li>Middle Childhood Education, specialized in Language Arts and Mathematics</li>
-							<li>Treasurer of Korean American Student Association</li>
+							<li>Middle Childhood Education, specialized in Langauge Arts and Mathematics</li>
 						</ul>
 					</p>
 			</section>
@@ -69,7 +82,6 @@
 						<p> Lee, J. (2018, Feb) Teachers of color and their needs to support equity in Mathematics Education. Paper presented at the Annual Conference of the Association of Mathematics Teacher Educators. Houston, TX.</p>
 					<h3> PME-NA Conference </h3>
 						<p>Lee, J. (2017, Oct). Interplay of representation, beliefs, and problem solving performance. Poster presented at the Annual Meeting of the North American Chapter of the International Group for the Psychology of Mathematics Education. Indianapolis, IN.</p>
-						
 			</section>
 
 			<section>
@@ -82,11 +94,11 @@
 							<li><a href = "https://coursera.org/share/ec812241a26927bdc92cfd2316010cd1">Instructional Design Foundations and Applications Certificate</a></li>
 							<li><a href = "https://coursera.org/share/7079cce096003b9d6eb32e4c4afbfe56">Learning Technologies Foundations and Applications</a></li>
 							<li><a href = "https://coursera.org/share/fcf2d8228f8f27d8804ead2874b30b96">Python for Everybody Specialization </a></li>
-							<li><a href="https://coursera.org/share/488c27b0c859e79a27363eb292dc1f97">Web Design for Everybody Specialization </a></li>
 						</ul>
 					</p>
 				</section>
 </main>
+
 <script>
 
 document.querySelectorAll('.gallery img').forEach(image => {
@@ -99,7 +111,32 @@ document.querySelectorAll('.gallery img').forEach(image => {
 document.querySelector('.popup-image span').onclick = () =>{
 	document.querySelector('.popup-image').style.display = 'none';
 }
+
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      }
+      else{
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+      }
+    });
+    burger.classList.toggle('toggle');
+  });
+}
+
+navSlide();
+
+
 </script>
 
 </body>
 </html>
+
